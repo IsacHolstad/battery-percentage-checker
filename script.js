@@ -1,2 +1,10 @@
 const battryLevel =
-document.querySelector(".battry")
+document.querySelector(".battry");
+navigator.getBattery().then(function(battery)
+
+
+{
+    const level = battery.level;
+    const status = level * 100 + "%";
+    battryLevel.innerHTML = status;
+});
